@@ -1,40 +1,42 @@
 using System;
 
+// Define a namespace to organize classes
 namespace MathOperationApp
 {
-    // Define a class named MathHandler
-    class MathHandler
+    // Define a class named MathOperation
+    public class MathOperation
     {
-        // Define a method that takes two integers as parameters
-        // Performs a math operation (e.g., multiplies first number by 2)
-        // and displays the second number
-        public void DoMathOperation(int number1, int number2)
+        // Create a method that takes two integers as parameters
+        // The method performs a math operation on the first integer and displays the second integer
+        public void PerformOperation(int firstNumber, int secondNumber)
         {
-            // Multiply number1 by 2
-            int result = number1 * 2;
+            // Multiply the first number by 2 (you can choose any math operation)
+            int result = firstNumber * 2;
 
-            // Print the result of the math operation
-            Console.WriteLine("Result of math operation on first number: " + result);
+            // Display the result of the operation on the first number
+            Console.WriteLine("Result of operation on first number: " + result);
 
-            // Display the second number
-            Console.WriteLine("Second number is: " + number2);
+            // Display the second number directly
+            Console.WriteLine("The second number is: " + secondNumber);
         }
     }
 
+    // The main Program class where execution starts
     class Program
     {
+        // The Main method is the entry point of the application
         static void Main(string[] args)
         {
-            // Instantiate the MathHandler class
-            MathHandler mathHandler = new MathHandler();
+            // Instantiate the MathOperation class
+            MathOperation mathOp = new MathOperation();
 
-            // Call the method with two numbers (positional parameters)
-            mathHandler.DoMathOperation(5, 10);
+            // Call the method using positional arguments
+            mathOp.PerformOperation(5, 10);
 
-            // Call the method with named parameters
-            mathHandler.DoMathOperation(number1: 7, number2: 20);
+            // Call the method using named parameters
+            mathOp.PerformOperation(firstNumber: 7, secondNumber: 14);
 
-            // Keep the console window open
+            // Wait for user input before closing the console (so output can be read)
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
